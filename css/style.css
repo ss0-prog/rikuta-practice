@@ -1,45 +1,67 @@
+/* 全体のリセットと準備 */
+* {
+  box-sizing: border-box; /* 枠線を含めてサイズを収める */
+  margin: 0;
+  padding: 0;
+}
 
 body {
-  margin: 0;
-  height: 100vh;
+  font-family: sans-serif;
+  background-color: #f8f9fa;
+}
+
+/* 1. 画面全体の中央揃え */
+.wrapper {
+  display: flex;
+  justify-content: center; /* 左右中央揃え */
+  align-items: center;     /* 上下中央揃え */
+  min-height: 100vh;       /* 画面いっぱいの高さを確保 */
+  padding: 20px;
+}
+
+/* 2. カードを並べるコンテナ（3列の折り返し設定） */
+.card-container {
+  display: flex;
+  flex-wrap: wrap;        /* 3つ並んだら綺麗に次の段に折り返す */
+  justify-content: center; /* カード群全体を中央に寄せる */
+  gap: 20px;              /* カード同士の隙間 */
+  max-width: 900px;       /* 3列がきれいに収まる全体の最大幅（必要に応じて調整） */
+  width: 100%;
+}
+
+/* 3. カード（ボックス）の個別設定 */
+.card {
+  /* カード自体のサイズ指定はせず、flex-basisで3列分（隙間を考慮）のベース幅を設定 */
+  flex: 0 1 calc((100% - 40px) / 3); 
+  
+  /* カード内のテキストを上下左右中央に配置 */
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #fff;
+  
+  /* 見た目の調整（枠線・内側の余白など） */
+  border: 2px solid #ccc;
+  padding: 40px 20px; /* テキストの上下左右に十分な余白を持たせる */
+  background-color: #ffffff;
+  border-radius: 8px;
+
+  /* 4. ホバー時のなめらかな動きの準備 */
+  transition: all 0.3s ease;  
 }
 
-.container {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+/* カード内のリンクテキスト */
+.card a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  display: block;
+  width: 100%;
+  text-align: center;
 }
 
-.box {
-  width: 100px;
-  height: 50px;
-  border-style: solid;
-  border-width: 2px;
-  box-sizing: border-box;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.box a {
-  font-size: 10px;
-  text-decoration: underline;
-}
-
-.box-red {
-  border-color: red;
-}
-.text-purple {
-  color: purple;
-}
-
-.box-blue {
-  border-color: blue;
-}
-.text-lime {
-  color: limegreen;
+/* 4. ホバー（:hover）時の動き */
+.card:hover {
+  border-color: #007bff;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  transform: translateY(-5px); 
 }
