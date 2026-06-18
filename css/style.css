@@ -1,0 +1,55 @@
+/* 1. 画面全体の設定と、枠を画面中央に配置する記述 */
+body {
+  margin: 0;
+  height: 100vh;           /* 画面の高さいっぱいに広げる */
+  display: flex;
+  justify-content: center; /* 左右の中央揃え */
+  align-items: center;     /* 上下の中央揃え */
+  background-color: #fff;  /* 背景は無地（白） */
+}
+
+/* 2. ２つの枠を上下に並べるためのコンテナ */
+.container {
+  display: flex;
+  flex-direction: column;  /* 枠を上下（縦）に並べる */
+  gap: 20px;               /* 枠と枠の間の余白（お好みで調整してください） */
+}
+
+/* 3. 共通の枠・テキスト設定 */
+.box {
+  width: 100px;            /* 横幅 100px */
+  height: 50px;            /* 縦幅 50px */
+  border-style: solid;     /* 枠線の種類（実線） */
+  border-width: 2px;       /* 枠線の太さ */
+  box-sizing: border-box;  /* 枠線の太さを幅・高さに含める設定 */
+  
+  /* 枠の中のテキストを中央揃えにする記述 */
+  display: flex;
+  justify-content: center; /* 左右中央 */
+  align-items: center;     /* 上下中央 */
+}
+
+/* 枠の中のaタグ（テキスト）の共通設定 */
+.box a {
+  font-size: 10px;         /* 文字サイズ 10px */
+  text-decoration: underline; /* 下線を入れる */
+}
+
+/* 4. 各ボタンの個別カラー設定 */
+/* 上のボタン：赤枠 */
+.box-red {
+  border-color: red;
+}
+/* 上のボタン：紫文字 */
+.text-purple {
+  color: purple;
+}
+
+/* 下のボタン：青枠 */
+.box-blue {
+  border-color: blue;
+}
+/* 下のボタン：黄緑文字 */
+.text-lime {
+  color: limegreen;
+}
