@@ -1,6 +1,5 @@
-/* 全体のリセットと準備 */
 * {
-  box-sizing: border-box; /* 枠線を含めてサイズを収める */
+  box-sizing: border-box; 
   margin: 0;
   padding: 0;
 }
@@ -9,12 +8,10 @@ body {
   font-family: sans-serif;
   background-color: #f8f9fa;
 }
-
-/* 1. 画面全体の中央揃え */
 .wrapper {
   display: flex;
-  justify-content: center; /* 左右中央揃え */
-  align-items: center;     /* 上下中央揃え */
+  justify-content: center; 
+  align-items: center; 
   min-height: 100vh;       /* 画面いっぱいの高さを確保 */
   padding: 20px;
 }
